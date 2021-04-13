@@ -8,5 +8,6 @@ import androidx.room.PrimaryKey
 class Reponse(
     @PrimaryKey(autoGenerate = true) val id: Int,
     @ColumnInfo(name = "value_reponse") val valueReponse: String?,
-    @ColumnInfo(name = "date_reponse") val dateReponse: String?
+    @ColumnInfo(name = "date_reponse") val dateReponse: String?,
+    @ColumnInfo(name = "comment") val comment: String?
 )

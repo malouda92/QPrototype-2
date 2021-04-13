@@ -1,51 +1,124 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <ImageButton
-        android:id="@+id/buttonSad"
-        android:layout_width="130dp"
-        android:layout_height="130dp"
-        android:layout_marginStart="84dp"
-        android:layout_marginEnd="42dp"
-        android:contentDescription="@string/app_name"
-        android:scaleType="fitCenter"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/buttonNeutral"
+    <TextView
+        android:id="@+id/textViewQuizz"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="36dp"
+        android:layout_marginEnd="20dp"
+        android:gravity="center"
+        android:text="@string/quizz"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.498"
-        app:srcCompat="@drawable/ic_sad" />
+        app:layout_constraintTop_toTopOf="parent" />
 
-    <ImageButton
-        android:id="@+id/buttonNeutral"
-        android:layout_width="130dp"
-        android:layout_height="130dp"
-        android:layout_marginStart="42dp"
-        android:layout_marginEnd="42dp"
-        android:contentDescription="@string/app_name"
-        android:scaleType="fitCenter"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/buttonSmile"
-        app:layout_constraintStart_toEndOf="@+id/buttonSad"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/ic_neutral" />
+    <com.google.android.material.chip.ChipGroup
+        android:id="@+id/chipGroup"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.567"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewQuizz"
+        app:singleSelection="true">
 
-    <ImageButton
-        android:id="@+id/buttonSmile"
-        android:layout_width="130dp"
-        android:layout_height="130dp"
-        android:layout_marginStart="42dp"
-        android:layout_marginEnd="84dp"
-        android:contentDescription="@string/app_name"
-        android:scaleType="fitCenter"
+        <com.google.android.material.chip.Chip
+            android:id="@+id/chipSatisfait"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checkable="true"
+            android:clickable="true"
+            android:minHeight="75dp"
+            android:text="@string/rep_poss_1"
+            android:textSize="24sp"
+            app:chipIcon="@drawable/ic_smile"
+            app:chipIconSize="50dp" />
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/chipMoyenSatisfait"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checkable="true"
+            android:clickable="true"
+            android:minHeight="75dp"
+            android:text="@string/rep_poss_2"
+            android:textSize="24sp"
+            app:chipIcon="@drawable/ic_neutral"
+            app:chipIconSize="50dp" />
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/chipInsatisfait"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checkable="true"
+            android:clickable="true"
+            android:minHeight="75dp"
+            android:text="@string/rep_poss_3"
+            android:textSize="24sp"
+            app:chipIcon="@drawable/ic_sad"
+            app:chipIconSize="50dp" />
+    </com.google.android.material.chip.ChipGroup>
+
+    <TextView
+        android:id="@+id/textViewAvis"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="24dp"
+        android:text="@string/text_comment"
+        android:textSize="18sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/chipGroup" />
+
+    <EditText
+        android:id="@+id/InputTextAvis"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="70dp"
+        android:autofillHints="@string/text_comment"
+        android:background="@drawable/input_background"
+        android:ems="10"
+        android:gravity="start|top"
+        android:inputType="textMultiLine"
+        android:lines="5"
+        android:maxLines="5"
+        android:padding="10dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.943"
-        app:layout_constraintStart_toEndOf="@+id/buttonNeutral"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.498"
-        app:srcCompat="@drawable/ic_smile" />
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewAvis"
+        app:layout_constraintVertical_bias="0.0"
+        tools:ignore="LabelFor" />
+
+    <Button
+        android:id="@+id/buttonEnvoyer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="8dp"
+        android:backgroundTint="@color/primary"
+        android:drawableEnd="@drawable/ic_action_send"
+        android:drawableTint="#FFFFFF"
+        android:text="@string/button_send"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/InputTextAvis"
+        app:layout_constraintVertical_bias="0.304" />
 </androidx.constraintlayout.widget.ConstraintLayout>

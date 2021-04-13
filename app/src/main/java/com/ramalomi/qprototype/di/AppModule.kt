@@ -3,6 +3,7 @@ package com.ramalomi.qprototype.di
 import android.content.Context
 import androidx.room.Room
 import com.ramalomi.qprototype.database.AppDatabase
+import com.ramalomi.qprototype.database.MIGRATION_1_2
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -17,7 +18,8 @@ object AppModule {
     @Singleton
     @Provides
     fun provideDataBase(
-        @ApplicationContext context: Context) = Room.databaseBuilder(context, AppDatabase::class.java, "Qprototype_db").build()
+        @ApplicationContext context: Context) = Room.databaseBuilder(context, AppDatabase::class.java, "Qprototype_db")
+            .addMigrations(MIGRATION_1_2).build()
 
     @Singleton
     @Provides
