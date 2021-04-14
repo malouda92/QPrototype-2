@@ -4,7 +4,7 @@ Une application destinée à recenser les feedback des clients d'un hôtel
 Application sous Android: Android kotlin - Navigation Component - MVVM - room - coroutines - Dagger Hilt
 \
 
-![Screenshot_1618419451](https://user-images.githubusercontent.com/17643857/114750061-3d8af100-9d5c-11eb-83cf-9187788ba31e.png)
+<image with="200" height="400" src="https://user-images.githubusercontent.com/17643857/114750061-3d8af100-9d5c-11eb-83cf-9187788ba31e.png"/>
 
 ![Screenshot_1618419470](https://user-images.githubusercontent.com/17643857/114750072-3fed4b00-9d5c-11eb-8e65-a2e4bb20c3a9.png)
 
