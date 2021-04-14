@@ -14,4 +14,13 @@ interface ReponseDao {
 
     @Insert
     suspend fun persist(reponse: Reponse)
+
+    @Query("SELECT * FROM reponse WHERE id = :id")
+    fun findReponseById(id: Int): LiveData<Reponse>
+
+    @Query("SELECT COUNT(id) FROM reponse ")
+    fun countReponse(): Int
+
+    @Query("SELECT COUNT(id) FROM reponse WHERE value_reponse = :query")
+    fun countReponseByQuery(query: String): Int
 }

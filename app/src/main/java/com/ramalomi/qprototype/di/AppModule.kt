@@ -19,7 +19,7 @@ object AppModule {
     @Provides
     fun provideDataBase(
         @ApplicationContext context: Context) = Room.databaseBuilder(context, AppDatabase::class.java, "Qprototype_db")
-            .addMigrations(MIGRATION_1_2).build()
+            .addMigrations(MIGRATION_1_2).allowMainThreadQueries().build()
 
     @Singleton
     @Provides

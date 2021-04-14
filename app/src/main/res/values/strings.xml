@@ -2,8 +2,9 @@
     <string name="app_name">Qprototype</string>
     <string name="quizz">Êtes-vous satisfait de votre séjour?</string>
     <string name="rep_poss_1">Satisfait</string>
-    <string name="rep_poss_2">Moyennement satisfait</string>
+    <string name="rep_poss_2">Neutre</string>
     <string name="rep_poss_3">Insatisfait</string>
     <string name="text_comment">Donner votre avis</string>
     <string name="button_send">Envoyer</string>
+    <string name="title_stat">Statistique</string>
 </resources>

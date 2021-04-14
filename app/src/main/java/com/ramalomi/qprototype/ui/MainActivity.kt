@@ -1,7 +1,10 @@
 package com.ramalomi.qprototype.ui
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
+import android.view.Menu
+import android.view.MenuItem
 import android.view.View
 import android.widget.ImageButton
 import android.widget.Toast
@@ -58,5 +61,15 @@ class MainActivity: AppCompatActivity(), View.OnClickListener {
         binding.InputTextAvis?.text?.clear()
     }
 
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        menuInflater.inflate(R.menu.main_menu, menu)
+        return true
+    }
 
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        if(item.itemId == R.id.statMenu) {
+            startActivity(Intent(this@MainActivity, MainActivity2::class.java))
+        }
+        return true
+    }
 }
